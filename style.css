@@ -1,0 +1,67 @@
+:root {
+  --bg: #ffffff;
+  --border: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --border: #ffffff;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  user-select: none;
+}
+
+.game {
+  width: 600px;
+  height: 200px;
+  border: 2px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Dino */
+#dino {
+  width: 44px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
+
+/* Jump animation */
+.jump {
+  animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+  0%   { bottom: 0; }
+  50%  { bottom: 100px; }
+  100% { bottom: 0; }
+}
+
+/* Cactus */
+#cactus {
+  width: 26px;
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  animation: move 1.5s infinite linear;
+}
+
+@keyframes move {
+  from { right: -30px; }
+  to   { right: 600px; }
+}
